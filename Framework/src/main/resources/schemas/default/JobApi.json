@@ -1,0 +1,81 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "required": [
+    "id",
+    "jobState",
+    "submissionDestinationUUID",
+    "submissionDestinationId",
+    "uuid",
+    "jobOwner",
+    "releaseCode",
+    "jobReferenceId"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "integer"
+    },
+    "jobState": {
+      "type": "integer"
+    },
+    "lastActivityDateTime": {
+      "type": "string"
+    },
+    "jobStartTime": {
+      "type": "string"
+    },
+    "jobSize": {
+      "type": "integer"
+    },
+    "submissionDestinationUUID": {
+      "type": "string"
+    },
+    "submissionDestinationId": {
+      "type": "integer"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "jobComplete": {
+      "type": "string"
+    },
+    "jobOwner": {
+      "type": "string"
+    },
+    "releaseMode": {
+      "type": "integer"
+    },
+    "releaseCode": {
+      "type": "string"
+    },
+    "jobEncryption": {
+      "type": "boolean"
+    },
+    "documentPageCount": {
+      "type": "integer"
+    },
+    "documentFormatCode": {
+      "type": "string"
+    },
+    "currentStage": {
+      "type": "integer"
+    },
+    "lastReportedSWName": {
+      "type": "string"
+    },
+    "printCount": {
+      "type": "integer"
+    },
+    "directPrint": {
+      "type": "boolean"
+    },
+    "jobReferenceId": {
+      "type": "integer"
+    }
+
+
+  }
+}

@@ -1,0 +1,37 @@
+{
+	"type": "array",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"required": [
+		"providerUUID",
+		"providerName",
+		"providerType",
+		"links",
+		"defaultProvider"
+	],
+	"properties": {
+		"providerUUID": {
+			"type": "string"
+		},
+		"providerName": {
+			"type": "string"
+		},
+		"providerType": {
+			"type": "string"
+		},
+		"links": {
+			"type": "array"
+		},
+		"rel": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string"
+		},
+		"href": {
+			"type": "string"
+		},
+		"defaultProvider": {
+			"type": "boolean"
+		}
+	}
+}

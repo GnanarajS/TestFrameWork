@@ -1,0 +1,24 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"required": [
+		"access_token",
+		"issued_token_type",
+		"token_type",
+		"expires_in"
+	],
+	"properties": {
+		"access_token": {
+			"type": "string"
+		},
+		"issued_token_type": {
+			"type": "string"
+		},
+		"token_type": {
+			"type": "string"
+		},
+		"expires_in": {
+			"type": "integer"
+		}
+	}
+}

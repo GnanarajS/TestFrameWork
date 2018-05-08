@@ -1,0 +1,20 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"required": [
+		"firstName",
+		"lastName",
+		"emailAddress"
+	],
+	"properties": {
+		"firstName": {
+			"type": ["string", "null"]
+		},
+		"lastName": {
+			"type": ["string", "null"]
+		},
+		"emailAddress": {
+			"type": "string"
+		}
+	}
+}

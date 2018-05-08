@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"required": [
+		"city",
+		"country",
+		"addresLine1",
+		"addressLine2",
+		"postalZip",
+		"state"
+	],
+	"properties": {
+		"city": {
+			"type": "string"
+		},
+		"country": {
+			"type": "string"
+		},
+		"addresLine1": {
+			"type": ["string", "null"]
+		},
+		"addresLine2": {
+			"type": ["string", "null"]
+		},
+		"postalZip": {
+			"type": "string"
+		},
+		"state": {
+			"type": "string"
+		}
+	}
+}

@@ -1,0 +1,53 @@
+{
+	"siteUUID": "",
+	"userUUID": "",
+	"status": "A",
+	"site_class": "pon-public",
+	"config": {
+		"defaultLang": "en_us",
+		"printerPrefix": "org--3045-4ee5-bb32-da34f6d082f2",
+		"guest": {
+			"enabled": true,
+			"behariour ": 2,
+			"appendPrefix": true,
+			"prefix": "guest-",
+			"defaultID": "guest"
+		}
+	},
+	"license": {
+		"expirationDate": "2030-05-16",
+		"externalRefID": "ADSAD2212E2-23222",
+		"userCreateReqConfirm": true,
+		"licensePrinters": 10,
+		"provisionedPrinters": 2,
+		"licensedUsers": 999,
+		"provisionedUsers": 1,
+		"licenseType": "P",
+		"licenseQualifier": "N",
+		"licenseTermType": "A"
+	},
+	"contact": {
+		"firstName": "QASiteTester",
+		"lastName": "Automation",
+		"emailAddress": ""
+	},
+	"address": {
+		"city": "Baden",
+		"country": "CA",
+		"addressLine1": "101 Wagler Ave",
+		"addressLine2": null,
+		"postalZip": "n2n 2n2",
+		"state": "ON"
+	},
+	"identity":{
+		"type": 3,
+		"siteUUID": "",
+		"siteUID": "",
+		"siteAuth": "6fb4e75f9ec6",
+		"orgName": "Hp Roam",
+		"orgId": "",
+		"serviceName": "Company Roam Service",
+		"serviceURL": "https://CompanyName.printanywhere.com"
+	}
+}
+

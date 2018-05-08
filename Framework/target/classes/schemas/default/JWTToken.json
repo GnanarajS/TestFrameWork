@@ -1,0 +1,75 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"required": [
+		"header",
+		"body",
+		"signature"
+	],
+	"properties": {
+		"header": {
+		"type": "object",
+		"required": [
+			"alg"
+		],
+		"properties": {
+			"alg": {
+				"type": "string"
+			}
+		}
+		},
+		"body": {
+		"type": "object",
+		"required": [
+			"iat",
+			"iss",
+			"email_verified",
+			"sub",
+			"given_name",
+			"family_name",
+			"user_uuid",
+			"preferred_username",
+			"logged_in_as",
+			"exp"
+		],
+		"properties": {
+			"iat": {
+				"type": "integer"
+			},
+			"iss": {
+				"type": "string"
+			},
+			"email_verified": {
+				"type": "boolean"
+			},
+			"sub": {
+				"type": "string"
+			},
+			"given_name": {
+				"type": "string"
+			},
+			"family_name": {
+				"type": "string"
+			},
+			"user_uuid": {
+				"type": "string"
+			},
+			"preferred_username": {
+				"type": "string"
+			},
+			"logged_in_as": {
+				"type": "string"
+			},
+			"exp": {
+				"type": "integer"
+			}
+		}
+		},
+		"signature": {
+			"type": "string",
+			"not" : {
+				"enum" : ["null"]
+			}
+		}
+	}
+}

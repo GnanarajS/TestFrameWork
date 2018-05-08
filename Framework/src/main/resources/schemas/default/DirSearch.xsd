@@ -1,0 +1,784 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DirSearch">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element type="xs:string" name="resultCount"/>
+        <xs:element type="xs:string" name="totalCount"/>
+        <xs:element name="printer" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="submitJobPrinter"/>
+              <xs:element name="alias">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="nameAlias"/>
+                    <xs:element type="xs:string" name="addressAlias"/>
+                    <xs:element type="xs:string" name="numericAlias"/>
+                    <xs:element name="emailAlias" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="enabled" use="optional"/>
+                            <xs:attribute type="xs:string" name="type" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="jobProcessingServices">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="jobProcessingService" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="serviceName"/>
+                          <xs:element type="xs:string" name="serviceType"/>
+                          <xs:element type="xs:string" name="serviceURI"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="enabled" use="optional"/>
+                        <xs:attribute type="xs:string" name="version" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="serviceCount" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="organization">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="orgName"/>
+                    <xs:element type="xs:string" name="orgDept"/>
+                    <xs:element type="xs:string" name="locationDesc"/>
+                    <xs:element type="xs:string" name="orgBrand"/>
+                    <xs:element type="xs:string" name="orgDisplayName"/>
+                    <xs:element type="xs:string" name="locationType"/>
+                    <xs:element type="xs:string" name="serviceID"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="address">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="addrLine1"/>
+                    <xs:element type="xs:string" name="addrLine2"/>
+                    <xs:element type="xs:string" name="city"/>
+                    <xs:element type="xs:string" name="province"/>
+                    <xs:element type="xs:string" name="state"/>
+                    <xs:element type="xs:string" name="country"/>
+                    <xs:element type="xs:string" name="postal"/>
+                    <xs:element type="xs:string" name="geoLocation"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="printerClass"/>
+              <xs:element name="printerLang">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="default" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="network"/>
+              <xs:element type="xs:string" name="model"/>
+              <xs:element type="xs:string" name="manufacturer"/>
+              <xs:element type="xs:string" name="printerModelID"/>
+              <xs:element type="xs:string" name="type"/>
+              <xs:element type="xs:string" name="colour"/>
+              <xs:element type="xs:string" name="color"/>
+              <xs:element type="xs:string" name="colorCapable"/>
+              <xs:element type="xs:string" name="colorPermit"/>
+              <xs:element type="xs:string" name="accessClass"/>
+              <xs:element name="mediaSupported">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="media" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="mediaSizeName"/>
+                          <xs:element type="xs:string" name="mediaSizeDim"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="mediaSizeNum" use="optional"/>
+                        <xs:attribute type="xs:string" name="default" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="pageLimit"/>
+              <xs:element type="xs:string" name="printerTech"/>
+              <xs:element type="xs:string" name="duplex"/>
+              <xs:element type="xs:string" name="duplexPermit"/>
+              <xs:element type="xs:string" name="attended"/>
+              <xs:element type="xs:string" name="retail"/>
+              <xs:element type="xs:string" name="payForPrint"/>
+              <xs:element name="jobRelease">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="use" use="optional"/>
+                      <xs:attribute type="xs:string" name="releaseMode" use="optional"/>
+                      <xs:attribute type="xs:string" name="label" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="coverPage"/>
+              <xs:element name="printerAttributes">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PJLCodeSet">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="overrideSpec" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="hoursOfOperation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="hours"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="assistDesc">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="printerAssistance">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="info"/>
+                          <xs:element type="xs:string" name="includeAssistanceInEmail"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="jobAccounting">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="currency">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="isoCode" use="optional"/>
+                            <xs:attribute type="xs:string" name="symbol" use="optional"/>
+                            <xs:attribute type="xs:string" name="symbolPrefix" use="optional"/>
+                            <xs:attribute type="xs:string" name="separator" use="optional"/>
+                            <xs:attribute type="xs:string" name="decimal" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="priceList"/>
+                    <xs:element name="jobAccountingInputs">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="releaseCode">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="enableAdvanced" use="optional"/>
+                                  <xs:attribute type="xs:string" name="use" use="optional"/>
+                                  <xs:attribute type="xs:string" name="label" use="optional"/>
+                                  <xs:attribute type="xs:string" name="langDictKey" use="optional"/>
+                                  <xs:attribute type="xs:string" name="type" use="optional"/>
+                                  <xs:attribute type="xs:string" name="minLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="maxLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="autoLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="pattern" use="optional"/>
+                                  <xs:attribute type="xs:string" name="scheme" use="optional"/>
+                                  <xs:attribute type="xs:string" name="subScheme" use="optional"/>
+                                  <xs:attribute type="xs:string" name="autoCreate" use="optional"/>
+                                  <xs:attribute type="xs:string" name="userEdit" use="optional"/>
+                                  <xs:attribute type="xs:string" name="validCharEnum" use="optional"/>
+                                  <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="clientUID">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="use" use="optional"/>
+                                  <xs:attribute type="xs:string" name="label" use="optional"/>
+                                  <xs:attribute type="xs:string" name="secure" use="optional"/>
+                                  <xs:attribute type="xs:string" name="langDictKey" use="optional"/>
+                                  <xs:attribute type="xs:string" name="default" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="networkLogin">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="use" use="optional"/>
+                                  <xs:attribute type="xs:string" name="label" use="optional"/>
+                                  <xs:attribute type="xs:string" name="langDictKey" use="optional"/>
+                                  <xs:attribute type="xs:string" name="default" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="sessionMetaData">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="use" use="optional"/>
+                                  <xs:attribute type="xs:string" name="label" use="optional"/>
+                                  <xs:attribute type="xs:string" name="secure" use="optional"/>
+                                  <xs:attribute type="xs:string" name="langDictKey" use="optional"/>
+                                  <xs:attribute type="xs:string" name="type" use="optional"/>
+                                  <xs:attribute type="xs:string" name="minLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="maxLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="pattern" use="optional"/>
+                                  <xs:attribute type="xs:string" name="validCharEnum" use="optional"/>
+                                  <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                  <xs:attribute type="xs:string" name="default" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="langDict">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="langDict" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="locale" use="optional"/>
+                                        <xs:attribute type="xs:string" name="releaseCodeLabel" use="optional"/>
+                                        <xs:attribute type="xs:string" name="networkLoginLabel" use="optional"/>
+                                        <xs:attribute type="xs:string" name="emailAddressLabel" use="optional"/>
+                                        <xs:attribute type="xs:string" name="clientUIDLabel" use="optional"/>
+                                        <xs:attribute type="xs:string" name="sessionMetaDataLabel" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="count" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="injectPJLHeaders" use="optional"/>
+                        <xs:attribute type="xs:string" name="injectPJLForPassThrough" use="optional"/>
+                        <xs:attribute type="xs:string" name="insertCopiesMode" use="optional"/>
+                        <xs:attribute type="xs:string" name="enableAuthorization" use="optional"/>
+                        <xs:attribute type="xs:string" name="ponML" use="optional"/>
+                        <xs:attribute type="xs:string" name="lang" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="aaaServices">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="printeronServiceUID" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="calcJobPrice" use="optional"/>
+                  <xs:attribute type="xs:float" name="taxRate" use="optional"/>
+                  <xs:attribute type="xs:string" name="taxIncluded" use="optional"/>
+                  <xs:attribute type="xs:string" name="priceOnGUI" use="optional"/>
+                  <xs:attribute type="xs:string" name="priceOnCover" use="optional"/>
+                  <xs:attribute type="xs:string" name="chargeForCover" use="optional"/>
+                  <xs:attribute type="xs:float" name="minJobCharge" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="authData">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ippData">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="ippUrl" use="optional"/>
+                            <xs:attribute type="xs:string" name="ippLanOnly" use="optional"/>
+                            <xs:attribute type="xs:string" name="ippLanUrl" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="prn_auth_supported"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="advertServices">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="advertService">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="type" use="optional"/>
+                            <xs:attribute type="xs:string" name="enabled" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="NUpSupported">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="NUpSupportedOption" maxOccurs="unbounded" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="default" use="optional"/>
+                  <xs:attribute type="xs:string" name="isSupported" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="extUIDList" minOccurs="0">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="extUID" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="type" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="abstract">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="printerAbstract">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="hours"/>
+                          <xs:element type="xs:string" name="includeHoursInEmail"/>
+                          <xs:element type="xs:string" name="location"/>
+                          <xs:element type="xs:string" name="includeLocationInEmail"/>
+                          <xs:element type="xs:string" name="printerDescription"/>
+                          <xs:element type="xs:string" name="includeDescriptionInEmail"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="num" use="optional"/>
+            <xs:attribute type="xs:string" name="uuid" use="optional"/>
+            <xs:attribute type="xs:string" name="printerID" use="optional"/>
+            <xs:attribute type="xs:string" name="online" use="optional"/>
+            <xs:attribute type="xs:string" name="crypto" use="optional"/>
+            <xs:attribute type="xs:string" name="locatorCode" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="parent">
+          <xs:complexType>
+            <xs:choice maxOccurs="unbounded" minOccurs="0">
+              <xs:element type="xs:string" name="submitJobPrinter"/>
+              <xs:element name="alias">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="nameAlias"/>
+                    <xs:element type="xs:string" name="addressAlias"/>
+                    <xs:element type="xs:string" name="numericAlias"/>
+                    <xs:element name="emailAlias" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="enabled" use="optional"/>
+                            <xs:attribute type="xs:string" name="type" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="jobProcessingServices">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="jobProcessingService" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="serviceName"/>
+                          <xs:element type="xs:string" name="serviceType"/>
+                          <xs:element type="xs:string" name="serviceURI"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="enabled" use="optional"/>
+                        <xs:attribute type="xs:string" name="version" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="serviceCount" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="organization">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="orgName"/>
+                    <xs:element type="xs:string" name="orgDept"/>
+                    <xs:element type="xs:string" name="locationDesc"/>
+                    <xs:element type="xs:string" name="orgBrand"/>
+                    <xs:element type="xs:string" name="orgDisplayName"/>
+                    <xs:element type="xs:string" name="locationType"/>
+                    <xs:element type="xs:string" name="serviceID"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="address">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="addrLine1"/>
+                    <xs:element type="xs:string" name="addrLine2"/>
+                    <xs:element type="xs:string" name="city"/>
+                    <xs:element type="xs:string" name="province"/>
+                    <xs:element type="xs:string" name="state"/>
+                    <xs:element type="xs:string" name="country"/>
+                    <xs:element type="xs:string" name="postal"/>
+                    <xs:element type="xs:string" name="geoLocation"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="printerClass"/>
+              <xs:element name="printerLang">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="default" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="network"/>
+              <xs:element type="xs:string" name="model"/>
+              <xs:element type="xs:string" name="manufacturer"/>
+              <xs:element type="xs:string" name="printerModelID"/>
+              <xs:element type="xs:string" name="type"/>
+              <xs:element type="xs:string" name="colour"/>
+              <xs:element type="xs:string" name="color"/>
+              <xs:element type="xs:string" name="colorCapable"/>
+              <xs:element type="xs:string" name="accessClass"/>
+              <xs:element name="mediaSupported">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="media" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="mediaSizeName"/>
+                          <xs:element type="xs:string" name="mediaSizeDim"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="default" use="optional"/>
+                        <xs:attribute type="xs:string" name="mediaSizeNum" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="NUpSupported">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="NUpSupportedOption" maxOccurs="unbounded" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="default" use="optional"/>
+                  <xs:attribute type="xs:string" name="isSupported" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="pageLimit"/>
+              <xs:element type="xs:string" name="printerTech"/>
+              <xs:element type="xs:string" name="duplex"/>
+              <xs:element type="xs:string" name="duplexPermit"/>
+              <xs:element type="xs:string" name="attended"/>
+              <xs:element type="xs:string" name="retail"/>
+              <xs:element type="xs:string" name="payForPrint"/>
+              <xs:element name="jobRelease">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="use" use="optional"/>
+                      <xs:attribute type="xs:string" name="releaseMode" use="optional"/>
+                      <xs:attribute type="xs:string" name="label" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="coverPage"/>
+              <xs:element name="printerAttributes">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PJLCodeSet">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="overrideSpec" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="hoursOfOperation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="hours"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="abstract">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="printerAbstract">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="hours"/>
+                          <xs:element type="xs:string" name="includeHoursInEmail"/>
+                          <xs:element type="xs:string" name="location"/>
+                          <xs:element type="xs:string" name="includeLocationInEmail"/>
+                          <xs:element type="xs:string" name="printerDescription"/>
+                          <xs:element type="xs:string" name="includeDescriptionInEmail"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="assistDesc">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="printerAssistance">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="info"/>
+                          <xs:element type="xs:string" name="includeAssistanceInEmail"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="jobAccounting">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="currency">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="isoCode" use="optional"/>
+                            <xs:attribute type="xs:string" name="symbol" use="optional"/>
+                            <xs:attribute type="xs:string" name="symbolPrefix" use="optional"/>
+                            <xs:attribute type="xs:string" name="separator" use="optional"/>
+                            <xs:attribute type="xs:string" name="decimal" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="priceList"/>
+                    <xs:element name="jobAccountingInputs">
+                      <xs:complexType>
+                        <xs:choice maxOccurs="unbounded" minOccurs="0">
+                          <xs:element name="networkLogin">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="use" use="optional"/>
+                                  <xs:attribute type="xs:string" name="label" use="optional"/>
+                                  <xs:attribute type="xs:string" name="default" use="optional"/>
+                                  <xs:attribute type="xs:string" name="langDictKey" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="releaseCode">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="enableAdvanced" use="optional"/>
+                                  <xs:attribute type="xs:string" name="use" use="optional"/>
+                                  <xs:attribute type="xs:string" name="label" use="optional"/>
+                                  <xs:attribute type="xs:string" name="langDictKey" use="optional"/>
+                                  <xs:attribute type="xs:string" name="type" use="optional"/>
+                                  <xs:attribute type="xs:string" name="minLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="maxLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="autoLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="pattern" use="optional"/>
+                                  <xs:attribute type="xs:string" name="scheme" use="optional"/>
+                                  <xs:attribute type="xs:string" name="subScheme" use="optional"/>
+                                  <xs:attribute type="xs:string" name="autoCreate" use="optional"/>
+                                  <xs:attribute type="xs:string" name="userEdit" use="optional"/>
+                                  <xs:attribute type="xs:string" name="validCharEnum" use="optional"/>
+                                  <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="sessionMetaData">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="use" use="optional"/>
+                                  <xs:attribute type="xs:string" name="label" use="optional"/>
+                                  <xs:attribute type="xs:string" name="secure" use="optional"/>
+                                  <xs:attribute type="xs:string" name="default" use="optional"/>
+                                  <xs:attribute type="xs:string" name="langDictKey" use="optional"/>
+                                  <xs:attribute type="xs:string" name="type" use="optional"/>
+                                  <xs:attribute type="xs:string" name="minLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="maxLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="pattern" use="optional"/>
+                                  <xs:attribute type="xs:string" name="validCharEnum" use="optional"/>
+                                  <xs:attribute type="xs:string" name="desc" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="clientUID">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="use" use="optional"/>
+                                  <xs:attribute type="xs:string" name="label" use="optional"/>
+                                  <xs:attribute type="xs:string" name="secure" use="optional"/>
+                                  <xs:attribute type="xs:string" name="default" use="optional"/>
+                                  <xs:attribute type="xs:string" name="langDictKey" use="optional"/>
+                                  <xs:attribute type="xs:string" name="pattern" use="optional"/>
+                                  <xs:attribute type="xs:string" name="minLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="maxLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="autoLength" use="optional"/>
+                                  <xs:attribute type="xs:string" name="validCharEnum" use="optional"/>
+                                  <xs:attribute type="xs:string" name="autoCreate" use="optional"/>
+                                  <xs:attribute type="xs:string" name="userEdit" use="optional"/>
+                                  <xs:attribute type="xs:string" name="type" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="langDict">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="langDict" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="locale" use="optional"/>
+                                        <xs:attribute type="xs:string" name="releaseCodeLabel" use="optional"/>
+                                        <xs:attribute type="xs:string" name="networkLoginLabel" use="optional"/>
+                                        <xs:attribute type="xs:string" name="emailAddressLabel" use="optional"/>
+                                        <xs:attribute type="xs:string" name="clientUIDLabel" use="optional"/>
+                                        <xs:attribute type="xs:string" name="sessionMetaDataLabel" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="count" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:choice>
+                        <xs:attribute type="xs:string" name="injectPJLHeaders" use="optional"/>
+                        <xs:attribute type="xs:string" name="injectPJLForPassThrough" use="optional"/>
+                        <xs:attribute type="xs:string" name="insertCopiesMode" use="optional"/>
+                        <xs:attribute type="xs:string" name="enableAuthorization" use="optional"/>
+                        <xs:attribute type="xs:string" name="ponML" use="optional"/>
+                        <xs:attribute type="xs:string" name="lang" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="aaaServices">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="printeronServiceUID" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="calcJobPrice" use="optional"/>
+                  <xs:attribute type="xs:float" name="taxRate" use="optional"/>
+                  <xs:attribute type="xs:string" name="taxIncluded" use="optional"/>
+                  <xs:attribute type="xs:string" name="priceOnGUI" use="optional"/>
+                  <xs:attribute type="xs:string" name="priceOnCover" use="optional"/>
+                  <xs:attribute type="xs:string" name="chargeForCover" use="optional"/>
+                  <xs:attribute type="xs:float" name="minJobCharge" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="authData">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ippData">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="ippUrl" use="optional"/>
+                            <xs:attribute type="xs:string" name="ippLanOnly" use="optional"/>
+                            <xs:attribute type="xs:string" name="ippLanUrl" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="prn_auth_supported"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="colorPermit"/>
+              <xs:element name="advertServices">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="advertService">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="type" use="optional"/>
+                            <xs:attribute type="xs:string" name="enabled" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="extUIDList" minOccurs="0">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="extUID" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="type"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+            <xs:attribute type="xs:string" name="num" use="optional"/>
+            <xs:attribute type="xs:string" name="uuid" use="optional"/>
+            <xs:attribute type="xs:string" name="printerID" use="optional"/>
+            <xs:attribute type="xs:string" name="online" use="required"/>
+            <xs:attribute type="xs:string" name="crypto" use="required"/>
+            <xs:attribute type="xs:string" name="locatorCode" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="returnCode"/>
+        <xs:element type="xs:string" name="userMessage"/>
+        <xs:element type="xs:string" name="errText"/>
+      </xs:choice>
+      <xs:attribute type="xs:string" name="ponAPIver" use = "required"/>
+      <xs:attribute type="xs:string" name="ponSWver" use = "required"/>
+      <xs:attribute type="xs:string" name="cpsFullAuthLine"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

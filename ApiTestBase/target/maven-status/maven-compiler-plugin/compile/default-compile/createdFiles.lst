@@ -1,0 +1,11 @@
+com/hp/ipg/rsapi/test/base/tests/APITestBase.class
+com/hp/ipg/rsapi/test/base/dataModels/DataProviderQueryStringModel.class
+com/hp/ipg/rsapi/test/base/config/CaseInsensitiveEndsWithMatcher.class
+com/hp/ipg/rsapi/test/base/config/CaseInsensitiveContainsMatcher.class
+com/hp/ipg/rsapi/test/base/dataModels/DataProviderBaseModel.class
+com/hp/ipg/rsapi/test/base/config/CaseInsensitiveStartsWithMatcher.class
+com/hp/ipg/rsapi/test/base/dataModels/ResourceTestSet$Property.class
+com/hp/ipg/rsapi/test/base/config/RsApiBaseTestConfiguration.class
+com/hp/ipg/rsapi/test/base/dataModels/DataProviderBaseModel$Property.class
+com/hp/ipg/rsapi/test/base/dataProviders/BaseDataProvider.class
+com/hp/ipg/rsapi/test/base/dataModels/ResourceTestSet.class

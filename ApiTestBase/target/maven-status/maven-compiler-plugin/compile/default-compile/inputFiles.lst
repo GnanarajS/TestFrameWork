@@ -1,0 +1,9 @@
+/Users/jacksparrow/git/roam/TestFramework/ApiTestBase/src/main/java/com/hp/ipg/rsapi/test/base/dataModels/ResourceTestSet.java
+/Users/jacksparrow/git/roam/TestFramework/ApiTestBase/src/main/java/com/hp/ipg/rsapi/test/base/config/CaseInsensitiveContainsMatcher.java
+/Users/jacksparrow/git/roam/TestFramework/ApiTestBase/src/main/java/com/hp/ipg/rsapi/test/base/config/CaseInsensitiveEndsWithMatcher.java
+/Users/jacksparrow/git/roam/TestFramework/ApiTestBase/src/main/java/com/hp/ipg/rsapi/test/base/tests/APITestBase.java
+/Users/jacksparrow/git/roam/TestFramework/ApiTestBase/src/main/java/com/hp/ipg/rsapi/test/base/dataModels/DataProviderBaseModel.java
+/Users/jacksparrow/git/roam/TestFramework/ApiTestBase/src/main/java/com/hp/ipg/rsapi/test/base/dataModels/DataProviderQueryStringModel.java
+/Users/jacksparrow/git/roam/TestFramework/ApiTestBase/src/main/java/com/hp/ipg/rsapi/test/base/config/RsApiBaseTestConfiguration.java
+/Users/jacksparrow/git/roam/TestFramework/ApiTestBase/src/main/java/com/hp/ipg/rsapi/test/base/dataProviders/BaseDataProvider.java
+/Users/jacksparrow/git/roam/TestFramework/ApiTestBase/src/main/java/com/hp/ipg/rsapi/test/base/config/CaseInsensitiveStartsWithMatcher.java

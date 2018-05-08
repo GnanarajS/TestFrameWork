@@ -1,0 +1,25 @@
+{
+	"online_status": "online",
+	"capabilities":{
+		"deployment_mode": "on-premise",
+		"preview": true,
+		"sra": true,
+		"max_file_size": 20,
+		"dirsearch": true,
+		"docapi": true
+	},
+	"links": [
+		{
+			"rel": "http://printeron.net/schemas/cloud/discovery/service/endpoint/directory_search",
+			"type": "application/xml",
+			"href": "",
+			"description": "This is the PrinterOn Directory Search API"
+		},
+		{
+			"rel": "http://printeron.net/schemas/cloud/discovery/service/endpoint/directory_search",
+			"type": "application/xml",
+			"href": "",
+			"description": "This is the PrinterOn DOC API"
+		}
+	]
+}

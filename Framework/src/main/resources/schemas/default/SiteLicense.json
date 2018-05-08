@@ -1,0 +1,48 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"required": [
+		"expirationDate",
+		"externalRefID",
+		"userCreateReqConfirm",
+		"licensePrinters",
+		"provisionedPrinters",
+		"licensedUsers",
+		"provisionedUsers",
+		"licenseType",
+		"licenseQualifier",
+		"licenseTermType"
+	],
+	"properties": {
+		"expirationDate": {
+			"type": "integer"
+		},
+		"externalRefID": {
+			"type": "string"
+		},
+		"userCreateReqConfirm": {
+			"type": "boolean"
+		},
+		"licensePrinters": {
+			"type": "integer"
+		},
+		"provisionedPrinter": {
+			"type": "string"
+		},
+		"licensedUsers": {
+			"type": "integer"
+		},
+		"provisionedUsers": {
+			"type": "integer"
+		},
+		"licenseType": {
+			"type": "string"
+		},
+		"licenseQualifier": {
+			"type": "string"
+		},
+		"licenseTermType": {
+			"type": "string"
+		}
+	}
+}

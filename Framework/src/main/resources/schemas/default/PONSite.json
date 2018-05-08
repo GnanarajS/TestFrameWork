@@ -1,0 +1,27 @@
+{
+  "type": ["object", "array"],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "required": [
+    "siteUUID",
+    "userUUID",
+    "status",
+    "address"
+  ],
+	"properties": {
+	    "siteUUID": {
+	      "type": "string"
+	    },
+	    "userUUID": {
+	      "type": "string"
+	    },
+	    "status": {
+	      "type": "string"
+	    },
+      "address":{
+        "type": "object",
+        "items": {
+          "$ref": "SiteAddress.json"
+        }
+      }
+	}
+}

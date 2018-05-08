@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "providerReferences": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "providerCount": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "providerReferences",
+    "providerCount"
+  ]
+}

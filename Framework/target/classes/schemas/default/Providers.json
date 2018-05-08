@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "allOf": [
+    {
+      "required": [
+        "providers"
+      ],
+      "properties": {
+      	"totalCount": {
+          "type": "integer"
+        },
+        "jobs": {
+          "type": "array",
+          "items": {
+            "$ref": "Provider.json"
+          }
+        }
+      }
+    }
+  ]
+}

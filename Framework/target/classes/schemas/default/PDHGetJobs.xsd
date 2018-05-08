@@ -1,0 +1,79 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetJobs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="numJobs" minOccurs="0"/>
+        <xs:element name="JobInfo" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:choice maxOccurs="unbounded" minOccurs="0">
+              <xs:element type="xs:string" name="jobID" minOccurs="0" />
+              <xs:element type="xs:string" name="jobState" minOccurs="0" />
+              <xs:element type="xs:string" name="internalJobState" minOccurs="0"/>
+              <xs:element type="xs:long" name="printAlias" minOccurs="0"/>
+              <xs:element type="xs:string" name="PTID" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobName" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobSize" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobTransmittedSize" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobPgCount" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobCrypto" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobOwner" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobOwnerURL" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobRecipient" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobPrivacy" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobPrivacyRequired" minOccurs="0"/>
+              <xs:element type="xs:string" name="isGroupPrintJob" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobAnonymityLevel" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobCopiesRequested" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobCopiesCompleted" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobCompressionType" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobEncryptionType" minOccurs="0"/>
+              <xs:element type="xs:string" name="jobImpressionCount" minOccurs="0"/>
+              <xs:element type="xs:string" name="timeAtCreation" minOccurs="0"/>
+              <xs:element type="xs:string" name="timeAtProcessing" minOccurs="0"/>
+              <xs:element type="xs:string" name="timeAtNotifying" minOccurs="0"/>
+              <xs:element type="xs:string" name="timeAtCompleted" minOccurs="0"/>
+              <xs:element type="xs:string" name="pmsStatus" minOccurs="0"/>
+              <xs:element type="xs:string" name="dataType" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-pde-command" minOccurs="0"/>
+              <xs:element type="xs:integer" name="pon-ext-external-job-id" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-action-uuid" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-action-ptid" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobReferenceID" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobColor" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobDateTime" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobType" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-docFormatApp" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-networkLogin" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-userEmail" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobImpressionCount" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobDestination" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobPageCount" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobCoverPage" minOccurs="0"/>
+              <xs:element type="xs:string" name="printCount" minOccurs="0"/>
+              <xs:element type="xs:string" name="firstPrintTime" minOccurs="0"/>
+              <xs:element type="xs:string" name="isURI" minOccurs="0"/>
+              <xs:element type="xs:string" name="finishing" minOccurs="0"/>
+              <xs:element type="xs:string" name="media" minOccurs="0"/>
+              <xs:element type="xs:string" name="orientation" minOccurs="0"/>
+              <xs:element type="xs:string" name="outputBin" minOccurs="0"/>
+              <xs:element type="xs:string" name="printQuality" minOccurs="0"/>
+              <xs:element type="xs:string" name="printerResolution" minOccurs="0"/>
+              <xs:element type="xs:string" name="sides" minOccurs="0"/>
+              <xs:element type="xs:string" name="colourMode" minOccurs="0"/>
+              <xs:element type="xs:string" name="documentAccess" minOccurs="0"/>
+              <xs:element type="xs:string" name="dataFileExists" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobMediaSizeName" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobMediaSizeNum" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobMediaWidth" minOccurs="0"/>
+              <xs:element type="xs:string" name="pon-ext-jobMediaHeight" minOccurs="0"/>
+            </xs:choice>
+            <xs:attribute type="xs:string" name="index" use="optional"/>
+            <xs:attribute type="xs:string" name="dataVersion" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="SWVer" />
+      <xs:attribute type="xs:string" name="returnCode" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

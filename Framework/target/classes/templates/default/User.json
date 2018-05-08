@@ -1,0 +1,8 @@
+{
+  "name" : {
+    "familyName" : "ABCD",
+    "givenName" : "ABCD"
+  },
+  "userName" : "1223@mail.com",
+  "emails" : [{"value": "abc.xyz@hp.com"}]
+}

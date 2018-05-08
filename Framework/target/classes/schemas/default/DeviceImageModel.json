@@ -1,0 +1,34 @@
+{
+	"$id": "http://example.com/example.json",
+	"type": "object",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"properties": {
+		"manufacturer": {
+			"$id": "/properties/manufacturer",
+			"type": "string",
+			"title": "The Manufacturer Schema ",
+			"default": "",
+			"examples": [
+				"HP"
+			]
+		},
+		"model": {
+			"$id": "/properties/model",
+			"type": "string",
+			"title": "The Model Schema ",
+			"default": "",
+			"examples": [
+				"E72525"
+			]
+		},
+		"url": {
+			"$id": "/properties/url",
+			"type": "string",
+			"title": "The Url Schema ",
+			"default": "",
+			"examples": [
+				"https://qa-deviceimage.s3.amazonaws.com/6d4c1a1e-4ce8-4267-be96-8f11a2f0940a.png"
+			]
+		}
+	}
+}

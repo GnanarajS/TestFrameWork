@@ -1,0 +1,12 @@
+{
+    "providerUUID": "",
+    "providerName": "API Testing",
+    "providerType": 0,
+    "links": [
+        {
+          "rel": "https://company.printanywhere.com/v1/servicedescription",
+          "type": "application/json",
+          "href": ""
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "allOf" : [
+    {
+      "properties":{
+        "name": {
+          "type":"object",
+
+          "properties":{
+            "givenName": {
+              "type":"string"
+
+            },
+            "familyName": {
+              "type":"string"
+
+            }
+          }
+        },
+        "displayName": {
+          "type":["string","null"]
+        },
+        "id": {
+          "type":"string"
+        }
+      }
+    }
+  ]
+
+}
