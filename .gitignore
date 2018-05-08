@@ -1,0 +1,6 @@
+target/
+.idea
+test-output/
+*.iml
+ApiTestBase/ApiTestBase.iml
+Framework/Framework.iml
