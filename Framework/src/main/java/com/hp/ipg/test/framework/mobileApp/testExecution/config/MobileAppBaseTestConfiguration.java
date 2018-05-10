@@ -14,7 +14,7 @@ import java.util.HashMap;
  * and make it available to project.
  */
 @Configuration
-@Import({ com.hp.ipg.test.framework.mobileApp.testExecution.config.MobileAppTestConfiguration.class })
+@Import({ MobileAppTestConfiguration.class })
 
 public class MobileAppBaseTestConfiguration {
 

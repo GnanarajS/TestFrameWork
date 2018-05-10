@@ -28,6 +28,9 @@ public class ServiceDescriptionService extends ResourceServiceBase
 	@Autowired
 	TestConfiguration testConfiguration;
 
+	@Autowired
+	UserService userService;
+
 	@Override
 	public String getEndpoint() {
 		return SERVICE_DESCRIPTION_ENDPOINT;
@@ -45,6 +48,21 @@ public class ServiceDescriptionService extends ResourceServiceBase
 				then().log().ifValidationFails(LogDetail.ALL).
 				statusCode(HttpStatus.OK.value()).extract().response();
 	}
+
+
+	public Response getDefaultServiceDescription(User user) throws IOException {
+		String url = providerService.getDefaultServiceDescriptionUrlFromUser(user);
+
+		RequestSpecification request = given();
+
+		return request.
+				accept(User.getContentType()).
+				when().log().ifValidationFails(LogDetail.ALL).
+				get(url).
+				then().log().ifValidationFails(LogDetail.ALL).
+				statusCode(HttpStatus.OK.value()).extract().response();
+	}
+
 
 	public String getLinkfromServiceDescription(User user, String urlName) throws IOException {
 
@@ -66,6 +84,31 @@ public class ServiceDescriptionService extends ResourceServiceBase
 			HashMap linkValues = (HashMap) list.get(i);
 
 			if (linkValues.get("href").toString().contains(urlName)) {
+				endpoint = linkValues.get("href").toString();
+				break;
+			}
+
+		}
+
+		return  endpoint;
+	}
+
+	public String getEndpoint(String serviceName) throws IOException {
+		User user =userService.create(User.getInstance());
+
+		Response response = getDefaultServiceDescription(user);
+		ArrayList serviceList = response.getBody().jsonPath().get("links");
+
+		ArrayList list = new ArrayList();
+		HashMap oauth = (HashMap) response.getBody().jsonPath().get("access");
+		HashMap  attribute = (HashMap) oauth.get("oauth2");
+		list=(ArrayList)attribute.get("links");
+		list.addAll(serviceList);
+		String endpoint = "";
+		for (int i = 0; i < list.size(); i++) {
+			HashMap linkValues = (HashMap) list.get(i);
+
+			if (linkValues.get("href").toString().contains(serviceName)) {
 				endpoint = linkValues.get("href").toString();
 				break;
 			}
