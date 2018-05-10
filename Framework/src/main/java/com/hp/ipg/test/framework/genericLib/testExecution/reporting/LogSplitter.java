@@ -45,7 +45,7 @@ public final class LogSplitter {
 
         Iterator<Entry<String, TestEntry>> it = entries.entrySet().iterator();
         while (it.hasNext()) {
-            Map.Entry<String, TestEntry> kvp = it.next();
+            Entry<String, TestEntry> kvp = it.next();
             if (!kvp.getValue().getTestPassed()) {
                 kvp.getValue().saveLog(destinationDirectory);
             }

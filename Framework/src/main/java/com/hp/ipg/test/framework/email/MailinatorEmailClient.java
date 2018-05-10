@@ -1,5 +1,6 @@
 package com.hp.ipg.test.framework.email;
 
+import static com.jayway.awaitility.Awaitility.await;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,6 +9,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 import javax.mail.MessagingException;
 
@@ -24,9 +26,9 @@ import org.springframework.stereotype.Component;
 public class MailinatorEmailClient extends EmailClientBase {
 
 	private static final String MAILINATOR_API_ENDPOINT = "https://api.mailinator.com/api";
-	private static final String MAILINATOR_INBOX_URL = MAILINATOR_API_ENDPOINT + "/inbox?to=%s&token=%s&private_domain=true";
-	private static final String MAILINATOR_EMAIL_URL = MAILINATOR_API_ENDPOINT + "/email?id=%s&token=%s&private_domain=true";
-	private static final String MAILINATOR_DELETE_EMAIL_URL = MAILINATOR_API_ENDPOINT + "/delete?id=%s&token=%s&private_domain=true";
+	private static final String MAILINATOR_INBOX_URL = MAILINATOR_API_ENDPOINT + "/inbox?to=%s&token=%s&private_domain=false";
+	private static final String MAILINATOR_EMAIL_URL = MAILINATOR_API_ENDPOINT + "/email?id=%s&token=%s&private_domain=false";
+	private static final String MAILINATOR_DELETE_EMAIL_URL = MAILINATOR_API_ENDPOINT + "/delete?id=%s&token=%s&private_domain=false";
 	private static final String MAIL_TOKEN = "1a61fc8c06df44bc9b1d4b6f278fbc30";
 
 	private static final String EMAIL_MSG_DATA = "data";
@@ -69,6 +71,7 @@ public class MailinatorEmailClient extends EmailClientBase {
 
 	private String waitForEmailMsgId(String toAddress, String subject, long timeoutSeconds) throws IOException, JSONException {
 		String emailUrl = String.format(MAILINATOR_INBOX_URL, toAddress, MAIL_TOKEN);
+		await().atMost(timeoutSeconds, TimeUnit.SECONDS).until(checkMsgID(emailUrl, subject));
 		return getMsgId(emailUrl, subject);
 	}
 

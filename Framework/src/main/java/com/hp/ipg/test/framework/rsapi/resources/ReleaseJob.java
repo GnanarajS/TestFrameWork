@@ -26,30 +26,30 @@ public class ReleaseJob extends HateoasResource {
     }
 
     public String setJobReferenceID(String jobReferenceID) {
-        return (String) this.put(ReleaseJob.Property.jobReferenceID.toString(), jobReferenceID);
+        return (String) this.put(Property.jobReferenceID.toString(), jobReferenceID);
     }
 
     public String setOutputDestinationID(String outputDestinationID) {
-        return (String) this.put(ReleaseJob.Property.outputDestinationID.toString(), outputDestinationID);
+        return (String) this.put(Property.outputDestinationID.toString(), outputDestinationID);
     }
 
     public String setReleaseCode(String releaseCode) {
-        return (String) this.put(ReleaseJob.Property.releaseCode.toString(), releaseCode);
+        return (String) this.put(Property.releaseCode.toString(), releaseCode);
     }
 
     public String getOperation() {
-        return (String) this.get(ReleaseJob.Property.operation.toString());
+        return (String) this.get(Property.operation.toString());
     }
 
     public String getJobReferenceID() {
-        return (String) this.get(ReleaseJob.Property.jobReferenceID.toString());
+        return (String) this.get(Property.jobReferenceID.toString());
     }
 
     public String getOutputDestinationID() {
-        return (String) this.get(ReleaseJob.Property.outputDestinationID.toString());
+        return (String) this.get(Property.outputDestinationID.toString());
     }
 
     public String getReleaseCode() {
-        return (String) this.get(ReleaseJob.Property.releaseCode.toString());
+        return (String) this.get(Property.releaseCode.toString());
     }
 }
