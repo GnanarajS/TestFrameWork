@@ -40,6 +40,8 @@ public enum ResourceName {
 	JWT_TOKEN("JWTToken"),
 	DEVICE_IMAGE("DeviceImage"),
 	DEVICE_IMAGE_MANUFACTURER("DeviceImageManufacturer"),
+	PASSWORD_RESET("PasswordReset"),
+	PASSWORD_CHANGE("PasswordChange"),
 	DEVICE_IMAGE_MODEL("DeviceImageModel"),
 	EMPTY_DEVICE_IMAGE_MODEL("EmptyDeviceImageModel");
 

@@ -84,6 +84,39 @@ public class ProviderService extends ResourceServiceBase {
 		return getServiceDescriptionLink(response);
 	}
 
+	public String getDefaultProvider(){
+	    String providerUUId = null;
+		Response response = getProviders();
+
+		ArrayList providerList = response.getBody().jsonPath().get("providers");
+
+		for(int i=0; i<providerList.size();i++) {
+			HashMap providerData = ((HashMap) providerList.get(i));
+
+			if (providerData.get("defaultProvider").toString().equals("true")) {
+				ArrayList links = (ArrayList) providerData.get("links");
+				providerUUId = providerData.get("providerUUID").toString();
+				break;
+			}
+		}
+		return  providerUUId;
+	}
+
+	public String getDefaultServiceDescriptionUrlFromUser(User user) throws IOException {
+		linkGivenProviderForUser(user,getDefaultProvider());
+
+		String userNameHash = ResourceBase.getMD5Hash(user.getUserNameFromResponse());
+		String requestURl = testConfiguration.getLookUpBaseURI() + PROVIDER_BY_USER_API_ENDPOINT + userNameHash;
+		RequestSpecification request = given();
+		Response response = request.
+				accept(Provider.getContentType()).
+				when().log().ifValidationFails(LogDetail.ALL).
+				get(requestURl).
+				then().log().ifValidationFails(LogDetail.ALL).
+				statusCode(HttpStatus.OK.value()).extract().response();
+		return getServiceDescriptionLink(response);
+	}
+
 	public String getServiceDescriptionLink(Response response) 
 	{
 		ArrayList attribute = response.getBody().jsonPath().get(PROVIDERS);
