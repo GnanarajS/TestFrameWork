@@ -11,7 +11,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  * and make it available to project.
  */
 @Configuration
-@Import({ WebAppTestConfiguration.class })
+@Import({ com.hp.ipg.test.framework.webApp.testExecution.config.WebAppTestConfiguration.class })
 public class WebAppBaseTestConfiguration {
     @Bean
     public static PropertySourcesPlaceholderConfigurer properties() {

@@ -40,11 +40,9 @@ com/hp/ipg/test/framework/rsapi/resources/PDHGetJobs.class
 com/hp/ipg/test/framework/mobileApp/testExecution/clients/SauceClient.class
 com/hp/ipg/test/framework/genericLib/testExecution/reporting/jenkins/Action.class
 com/hp/ipg/test/framework/genericLib/testExecution/reporting/LogSplitter.class
-com/hp/ipg/test/framework/rsapi/resources/PasswordChange$Property.class
 com/hp/ipg/test/framework/genericLib/testExecution/TestListener.class
 com/hp/ipg/test/framework/rsapi/resources/DocProcess$Property.class
 com/hp/ipg/test/framework/rsapi/resources/ServiceDescription$CapabilitiesProperties.class
-com/hp/ipg/test/framework/rsapi/resources/PasswordChange.class
 com/hp/ipg/test/framework/webApp/testExecution/WebApp.class
 com/hp/ipg/test/framework/rsapi/resources/User$Emails.class
 com/hp/ipg/test/framework/webApp/testExecution/config/WebAppTestConfiguration$QA.class
@@ -73,7 +71,6 @@ com/hp/ipg/test/framework/genericLib/testExecution/reporting/TriageReport$1.clas
 com/hp/ipg/test/framework/mobileApp/pageObjectBase/iOSPageBase.class
 com/hp/ipg/test/framework/genericLib/testExecution/reporting/jenkins/Branch.class
 com/hp/ipg/test/framework/rsapi/config/TestConfiguration$QA.class
-com/hp/ipg/test/framework/rsapi/resources/PasswordReset.class
 com/hp/ipg/test/framework/genericLib/testExecution/utils/BuildUtils.class
 com/hp/ipg/test/framework/mobileApp/testExecution/config/Device.class
 com/hp/ipg/test/framework/email/EmailException.class
@@ -98,10 +95,8 @@ com/hp/ipg/test/framework/mobileApp/testExecution/config/MobileAppTestConfigurat
 com/hp/ipg/test/framework/rsapi/resources/PONSite$SiteAddress.class
 com/hp/ipg/test/framework/rsapi/resources/DocStatus$Property.class
 com/hp/ipg/test/framework/email/config/PlatformConfig.class
-com/hp/ipg/test/framework/rsapi/resources/PasswordReset$Property.class
 com/hp/ipg/test/framework/rsapi/resources/PDHDeleteJob.class
 com/hp/ipg/test/framework/rsapi/services/DeviceImageService.class
-com/hp/ipg/test/framework/rsapi/services/PasswordResetService.class
 com/hp/ipg/test/framework/webApp/pageObjectBase/SeleniumPageBase$8.class
 com/hp/ipg/test/framework/rsapi/resources/PDHGetJob.class
 com/hp/ipg/test/framework/rsapi/resources/PONSite$ConfigProperty.class

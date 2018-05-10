@@ -49,11 +49,6 @@ public class User extends HateoasResource {
         return email;
     }
 
-    public static String getMailinatorUserMail() {
-        String email = "Roam-User" + UUID.randomUUID() + "@mailinator.com";
-        return email;
-    }
-
     public String getSchemaPath() {
         return ResourceBase.getSchemaPath(ResourceName.USER, ApiVersion.DEFAULT);
     }

@@ -5,18 +5,17 @@
     <parent>
         <artifactId>TestFramework</artifactId>
         <groupId>com.hp.ipg.roam.test.framework</groupId>
-        <version>1.0.4</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ApiTestBase</artifactId>
-    <version>1.0.4</version>
 
     <dependencies>
         <dependency>
             <groupId>com.hp.ipg.roam.test.framework</groupId>
             <artifactId>Framework</artifactId>
-            <version>1.0.4</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

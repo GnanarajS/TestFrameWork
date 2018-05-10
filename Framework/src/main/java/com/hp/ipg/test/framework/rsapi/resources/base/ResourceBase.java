@@ -29,7 +29,6 @@ public class ResourceBase extends HashMap<String, Object> {
 	public static final String TEMPLATES_DIRECTORY = "templates";
 	public static final String DEFAULT_PASSWORD = "R0am@User";
 	public static final String AUTHORIZATION = "Authorization";
-	public static final String PASSWORD_RESET_AUTHORIZATION = "Basic am9obi5zbWl0aEBocC5jb206MTIzNDU2Nzg=";
 
 	//TODO: Support JSON & XML
 	public static String getFileExtension() {

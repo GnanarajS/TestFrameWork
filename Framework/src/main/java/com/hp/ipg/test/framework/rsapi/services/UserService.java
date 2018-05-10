@@ -241,22 +241,4 @@ public class UserService extends ResourceServiceBase {
 				statusCode(HttpStatus.CREATED.value()).
 				extract().body().as(User.class);
 	}
-
-	public Response checkUserLogin(String userName, String password, int expectedCode) {
-		String grantType = "password";
-
-		RequestSpecification request = given();
-		request.header("Content-Type" , CONTENT_TYPE);
-		request.header("Accept",ACCEPT);
-		request.header("Authorization",AUTHORIZATION);
-
-		return request.
-				param(USERNAME_PARAM,userName).
-				param(PASSWORD_PARAM,password).
-				param(GRANT_TYPE_PARAM,grantType).
-				when().log().ifValidationFails(LogDetail.ALL).
-				post(TOKEN_ENDPOINT).
-				then().log().ifValidationFails(LogDetail.ALL).
-				statusCode(expectedCode).extract().response();
-	}
 }

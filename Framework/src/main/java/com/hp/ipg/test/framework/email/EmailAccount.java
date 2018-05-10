@@ -12,9 +12,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EmailAccount {
-	private static final Logger  LOGGER = LoggerFactory.getLogger(EmailAccount.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(EmailAccount.class);
 
-	public static final Logger TEST = LoggerFactory.getLogger(EmailAccount.class);
 	@Autowired
 	protected EmailClientBase emailClient;
 
